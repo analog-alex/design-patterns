@@ -1,0 +1,23 @@
+{
+  "name": "patterns",
+  "version": "0.0.1",
+  "description": "Design patterns exemplified with TypeScript code",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "lint": "tslint --project .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/node": "14.0.23",
+    "ts-node": "8.10.2",
+    "tslint-config-airbnb": "5.11.2",
+    "tslint": "^5.11.0",
+    "typescript": "3.9.7"
+  },
+  "keywords": [
+    "TypeScript"
+  ],
+  "author": "Miguel Alexandre",
+  "license": "MIT"
+}
