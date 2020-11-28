@@ -1,22 +1,22 @@
 interface Component {
-  operation() : void;
+  operation() : string;
 }
 
 class Square implements Component {
-  operation(): void {
-    console.log('I am a square!');
+  operation(): string {
+    return ('I am a square!');
   }
 }
 
 class Circle implements Component {
-  operation(): void {
-    console.log('I am a circle!');
+  operation(): string {
+    return ('I am a circle!');
   }
 }
 
 class Triangle implements Component {
-  operation(): void {
-    console.log('I am a triangle!');
+  operation(): string {
+    return ('I am a triangle!');
   }
 }
 

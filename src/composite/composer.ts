@@ -7,8 +7,9 @@ class Composite implements Component {
     this.components = components;
   }
 
-  operation(): void {
-    this.components.forEach(component => component.operation());
+  operation(): string {
+    return this.components.map(component => component.operation())
+      .reduce((x, y) => `${x}:${y}`);
   }
 
   add(component: Component) {

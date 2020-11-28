@@ -1,11 +1,12 @@
 import { Component } from './component';
+import { Logger } from '../utils/logger.dummy';
 
 abstract class Decorator implements Component {
   constructor(public component: Component) { }
   abstract operation(): void;
 }
 
-class ContreteDecorator1 extends Decorator {
+class DescriptionDecorator extends Decorator {
   constructor(component: Component) {
     super(component);
   }
@@ -14,16 +15,12 @@ class ContreteDecorator1 extends Decorator {
     /*
      * adds description
      */
-    console.log('Sum if the squares of all even numbers from 1 to 100:');
-    super.component.operation();
-  }
-
-  private range(start: number, end: number): number[] {
-    return [...Array(1 + end - start).keys()].map(v => start + v);
+    Logger.info('Sum if the squares of all even numbers from 1 to 100:');
+    this.component.operation();
   }
 }
 
-class ContreteDecorator2 extends Decorator {
+class SeparatorDecorator extends Decorator {
   constructor(component: Component) {
     super(component);
   }
@@ -32,13 +29,9 @@ class ContreteDecorator2 extends Decorator {
     /*
      * adds a separator
      */
-    super.component.operation();
-    console.log('-----------------------------------');
-  }
-
-  private range(start: number, end: number): number[] {
-    return [...Array(1 + end - start).keys()].map(v => start + v);
+    this.component.operation();
+    Logger.info('-----------------------------------');
   }
 }
 
-export { Decorator, ContreteDecorator1, ContreteDecorator2 };
+export { Decorator, DescriptionDecorator, SeparatorDecorator };
