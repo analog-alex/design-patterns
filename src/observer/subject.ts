@@ -1,4 +1,5 @@
 import { Observer } from './observer';
+import { Logger } from '../utils/logger.dummy';
 
 interface Subject { // or Observable
   follow(observer: Observer): void;
@@ -34,7 +35,7 @@ class Boss implements Subject {
    * the boss does boss like things
    */
   giveOrders(): void {
-    console.log(`As the ${this.title}, I, ${this.name}, am barking orders!`);
+    Logger.info(`As the ${this.title}, I, ${this.name}, am barking orders!`);
     this.notify();
   }
 

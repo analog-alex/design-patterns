@@ -1,3 +1,5 @@
+import { Logger } from '../utils/logger.dummy';
+
 interface Component {
   operation() : void;
 }
@@ -12,7 +14,7 @@ class ConcreteComponent implements Component {
       .map(i => i * i)
       .filter(i => i % 2 === 0)
       .reduce((acc, i) => acc + i);
-    console.log(sum);
+    Logger.info(sum.toString());
   }
 
   private range(start: number, end: number): number[] {

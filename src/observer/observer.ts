@@ -1,4 +1,4 @@
-import { Subject } from './subject';
+import { Logger } from '../utils/logger.dummy';
 
 interface Observer {
   update(order: String): void;
@@ -13,7 +13,7 @@ class Employee implements Observer {
   }
 
   update(order: String): void {
-    console.log(`I'm ${this.id()} and I'm being ordered to ${order}`);
+    Logger.info(`I'm ${this.id()} and I'm being ordered to ${order}`);
   }
 
   id(): String {
