@@ -1,4 +1,5 @@
 import { Visitor } from './vistor';
+import { Logger } from '../utils/logger.dummy';
 
 interface Element {
   accept(visitor: Visitor<Element>): void;
@@ -11,7 +12,7 @@ class Boss implements Element {
   }
 
   operation() {
-    console.log('I am the BOSS!');
+    Logger.info('I am the BOSS!');
   }
 }
 
@@ -21,7 +22,7 @@ class Employee implements Element {
   }
 
   operation() {
-    console.log('I am a lowly employee ... sniff!');
+    Logger.info('I am a lowly employee ... sniff!');
   }
 }
 

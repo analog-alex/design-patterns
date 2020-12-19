@@ -1,16 +1,18 @@
+import { Logger } from '../utils/logger.dummy';
+
 interface Strategy {
   execute(content: string): void;
 }
 
 class UpperCaseStrategy implements Strategy {
   execute(content: string): void {
-    console.log(content.toLocaleUpperCase());
+    Logger.info(content.toLocaleUpperCase());
   }
 }
 
 class LowerCaseStrategy implements Strategy {
   execute(content: string): void {
-    console.log(content.toLocaleLowerCase());
+    Logger.info(content.toLocaleLowerCase());
   }
 }
 
